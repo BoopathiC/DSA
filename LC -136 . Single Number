@@ -1,3 +1,5 @@
+//unique number example [2,2,1] o/p is 1
+
 class Solution {
 public:
     int singleNumber(vector<int>& nums) {
