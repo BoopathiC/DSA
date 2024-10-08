@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+    int m,n;
+    cin>>m>>n;
+    int arr1[m][n];
+    for(int i=0;i<n;i++){
+        for(int j=0;j<m;j++){
+        cin>>arr1[i][j];
+        }
+    }
+    int a,b;
+    cin>>a>>b;
+    int arr2[a][b];
+    for(int i=0;i<a;i++){
+        for(int j=0;j<b;j++){
+            cin>>arr2[i][j];
+        }
+    }
+    if(n!=a){
+        cout<<"Multiplication is not possible";
+    }
+    else{
+        int a1[m][b];
+        for(int i=0;i<m;i++){
+            for(int j=0;j<b;j++){
+                 a1[i][j]=0;
+            }
+        }
+        
+        for(int i=0;i<m;i++){
+            for(int j=0;j<b;j++){
+                for(int k=0;k<n;k++){
+                    a1[i][j]+=arr1[i][k]*arr2[k][j];
+                }
+            }
+        }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<b;j++){
+                cout<<a1[i][j]<<" ";
+            }
+            cout<<endl;
+        }
+    }
+}
