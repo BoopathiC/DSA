@@ -1,0 +1,23 @@
+class Solution {
+  public:
+    // Function to reverse a doubly linked list
+    DLLNode* reverseDLL(DLLNode* head) {
+        // Your code here
+        
+        if(head==NULL || head->next==NULL){
+            return head;
+        }
+        
+        DLLNode* current=head,*Next,*previous=NULL;
+        while(current != NULL){
+            Next=current->next;
+            current->next=previous;
+            current->prev=Next;
+            
+            previous=current;
+            current=Next;
+            
+        }
+        return previous;
+    }
+};
