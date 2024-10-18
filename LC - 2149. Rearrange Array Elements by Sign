@@ -1,0 +1,47 @@
+class Solution {
+    public int[] rearrangeArray(int[] nums) {
+        int arr[]=new int[nums.length];
+
+        int pos=0;
+        int neg=1;
+        for(int num:nums){
+            if(num>0){
+                arr[pos]=num;
+                pos+=2;            //positive move to next next integer if greater than 0 its stored
+            }
+            else{
+                arr[neg]=num;
+                neg+=2;
+            }
+        }
+        return arr;
+    }
+}
+
+
+
+
+
+class Solution {
+public:
+    vector<int> rearrangeArray(vector<int>& nums) {
+        
+        vector<int>positive,negative,ans;
+
+        for(int i=0;i<nums.size();i++){
+            if(nums[i]>0){
+                positive.push_back(nums[i]); //stored positive
+            }
+            else{
+                negative.push_back(nums[i]); //stored negative
+            }
+        }
+            for(int i=0;i<positive.size();i++){
+            ans.push_back(positive[i]);  //first positive
+            ans.push_back(negative[i]); //next negative
+        }
+            return ans;
+
+
+    }
+};
