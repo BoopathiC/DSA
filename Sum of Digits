@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int main()
+{
+    int n;
+    cin>>n;
+
+    
+    int sum=0;
+    while(n>0){
+        int result=n%10;     //1234%10 => result = 4
+        n=n/10;                //1234/10 => n=123
+        sum=sum+result;         //sum=0 , result =4 then sum=0+4 sum=4  =>>>4+3+2+1=10
+    }
+  
+    cout<<sum;
+    return 0;
+}
+
+//1234   10
