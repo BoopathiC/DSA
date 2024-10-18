@@ -1,0 +1,21 @@
+class Solution {
+    public int[] sortArrayByParityII(int[] nums) {
+        int arr[]=new int[nums.length];
+
+        int even=0;
+        int odd=1;
+
+        for(int num:nums){
+            if(num%2!=0){   //odd numbers stored
+                arr[odd]=num;
+                odd+=2;
+            }
+            else{
+                arr[even]=num;  //even number stored
+                even+=2;
+            }
+        }
+        return arr;
+        
+    }
+}
