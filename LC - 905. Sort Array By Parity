@@ -1,0 +1,21 @@
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& nums) {
+        
+        vector<int>even,odd;
+
+        for(int i=0;i<nums.size();i++){  //separate even , odd numbers
+            if(nums[i]%2==0){
+                even.push_back(nums[i]);
+            }
+            else{
+                odd.push_back(nums[i]);
+            }
+        }
+
+        for(int num:odd){
+            even.push_back(num);  //combine even and odd numbers place even numbers first
+        }
+        return even;
+    }
+};
