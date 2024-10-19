@@ -1,0 +1,31 @@
+class Solution {
+public:
+    vector<int> sortEvenOdd(vector<int>& nums) {
+        
+        vector<int>even,odd;
+
+        for(int i=0;i<nums.size();i++){ //separate even and odd numbers 
+            if(i%2)
+                even.push_back(nums[i]);
+            else
+                odd.push_back(nums[i]);
+        }
+
+        sort(even.begin(),even.end(),greater<int>());  //sort even numbers
+        sort(odd.begin(),odd.end()); // sort   odd number
+
+        int e=0,o=0;
+        vector<int>ans;
+        while(o<odd.size() || e<even.size()){
+            if(o<odd.size()){
+                ans.push_back(odd[o++]);
+            }
+            if(e<even.size()){
+                ans.push_back(even[e++]);
+            }
+        }
+
+        return ans;
+
+    }
+};
