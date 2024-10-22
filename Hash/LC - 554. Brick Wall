@@ -1,0 +1,21 @@
+class Solution {
+    public int leastBricks(List<List<Integer>> wall) {
+
+        Map<Integer,Integer> gapCount=new HashMap<>();
+
+        for(List<Integer> row:wall){
+            int width=0;
+
+            for(int i=0;i<row.size()-1;i++){
+                width+=row.get(i);
+                gapCount.put(width,gapCount.getOrDefault(width,0)+1);
+            }
+        }
+        int maxGaps=0;
+        for(int count: gapCount.values()){
+            maxGaps=Math.max(maxGaps,count);
+        }
+        return wall.size()-maxGaps;
+   
+    }
+}
